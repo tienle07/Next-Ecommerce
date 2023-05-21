@@ -24,7 +24,6 @@ export default async function handle(req, res) {
     const links = [];
     for (const file of files.file) {
         const ext = file.originalFilename.split('.').pop();
-        console.log({ ext, file });
         const newFilename = Date.now() + '.' + ext;
         await client.send(new PutObjectCommand({
             Bucket: bucketName,
